@@ -1,0 +1,29 @@
+{
+    "name": "ahmadsyamim/mosque-module",
+    "description": "Mosque Management",
+    "type": "laravel-module",
+    "authors": [
+        {
+            "name": "Ahmad Syamim",
+            "email": "ahmad.syamim@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Mosque\\": ""
+        }
+    },
+    "require": {
+    },
+    "scripts": {
+        "post-autoload-dump": [
+        ]
+    }
+}
