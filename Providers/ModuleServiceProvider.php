@@ -1,0 +1,50 @@
+<?php
+
+namespace Modules\Mosque\Providers;
+
+use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+
+class ModuleServiceProvider
+{
+    protected $moduleName;
+
+    public function __construct($moduleName)
+    {
+        $this->moduleName = $moduleName;
+    }
+    /**
+     * Boot the application events.
+     *
+     * @return void
+     */
+    public function postInstall()
+    {
+        return true;
+    }
+
+    /**
+     * Boot the application events.
+     *
+     * @return void
+     */
+    public function postEnable()
+    {
+        // Check for assets resources
+        File::copyDirectory(module_path($this->moduleName, 'Resources/assets/images'), storage_path('app/public'));
+
+        // $filenames = File::files(storage_path('themes'));
+
+        // $packages = array_map(function ($filename) {
+        //     return basename($filename->getRelativePathname(), '.theme.tar.gz');
+        // }, $filenames);
+
+        // foreach ($packages as $package) {
+        //     \Artisan::call("theme:install", ['package' => $package]);
+        // }
+
+        return true;
+    }
+}
