@@ -2,78 +2,84 @@
 
 namespace Modules\Mosque\Http\Controllers;
 
-use Illuminate\Contracts\Support\Renderable;
+use App\Http\Requests\CreateMosqueRequest;
+use App\Http\Requests\UpdateMosqueRequest;
+use Modules\Mosque\Entities\MosqueRepository;
+use Modules\Mosque\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use Flash;
+use Response;
 
-class MosqueController extends Controller
+class MosqueController extends AppBaseController
 {
-    /**
-     * Display a listing of the resource.
-     * @return Renderable
-     */
-    public function index()
+    /** @var  MosqueRepository */
+    private $mosqueRepository;
+
+    public function __construct(MosqueRepository $mosqueRepo)
     {
-        return view('mosque::index');
+        $this->mosqueRepository = $mosqueRepo;
     }
 
     /**
-     * Show the form for creating a new resource.
-     * @return Renderable
+     * Display a listing of the Mosque.
+     *
+     * @param Request $request
+     *
+     * @return Response
+     */
+    public function index(Request $request)
+    {
+        $mosques = $this->mosqueRepository->all();
+
+        return view('mosques.index')
+            ->with('mosques', $mosques);
+    }
+
+    /**
+     * Show the form for creating a new Mosque.
+     *
+     * @return Response
      */
     public function create()
     {
-        return view('mosque::create');
+        return view('mosques.create');
     }
 
     /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
+     * Store a newly created Mosque in storage.
+     *
+     * @param CreateMosqueRequest $request
+     *
+     * @return Response
      */
-    public function store(Request $request)
+    public function store(CreateMosqueRequest $request)
     {
-        //
+        $input = $request->all();
+
+        $mosque = $this->mosqueRepository->create($input);
+
+        Flash::success(__('messages.saved', ['model' => __('models/mosques.singular')]));
+
+        return redirect(route('mosques.index'));
     }
 
     /**
-     * Show the specified resource.
+     * Display the specified Mosque.
+     *
      * @param int $id
-     * @return Renderable
+     *
+     * @return Response
      */
     public function show($id)
     {
-        return view('mosque::show');
-    }
+        $mosque = $this->mosqueRepository->find($id);
 
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('mosque::edit');
-    }
+        if (empty($mosque)) {
+            Flash::error(__('messages.not_found', ['model' => __('models/mosques.singular')]));
 
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+            return redirect(route('mosques.index'));
+        }
 
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
+        return view('mosques.show')->with('mosque', $mosque);
     }
 }

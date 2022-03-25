@@ -21,6 +21,7 @@
         }
     },
     "require": {
+        "mtvs/eloquent-hashids": "^3.2"
     },
     "scripts": {
         "post-autoload-dump": [
