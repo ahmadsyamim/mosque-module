@@ -11,6 +11,4 @@
 |
 */
 
-Route::prefix('mosque')->group(function() {
-    Route::get('/', 'MosqueController@index');
-});
+Route::resource('mosques', 'MosqueController');
