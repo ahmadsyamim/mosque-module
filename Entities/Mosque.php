@@ -149,7 +149,7 @@ class Mosque extends Model
         if ($this->image) {
             return asset('storage/' . $this->image);
         } else {
-            return asset('images/placeholder.png');
+            return asset('storage/mosques/placeholder.png');
         }
     }
 }
