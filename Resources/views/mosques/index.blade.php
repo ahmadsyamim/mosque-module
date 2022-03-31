@@ -26,3 +26,4 @@
     </div>
 @endsection
 
+@include('mosque::mosques.partials')
