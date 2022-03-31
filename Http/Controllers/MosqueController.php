@@ -31,7 +31,7 @@ class MosqueController extends AppBaseController
     {
         $mosques = $this->mosqueRepository->all();
 
-        return view('mosques.index')
+        return view('mosque::mosques.index')
             ->with('mosques', $mosques);
     }
 
@@ -42,7 +42,7 @@ class MosqueController extends AppBaseController
      */
     public function create()
     {
-        return view('mosques.create');
+        return view('mosque::mosques.create');
     }
 
     /**
@@ -80,6 +80,6 @@ class MosqueController extends AppBaseController
             return redirect(route('mosques.index'));
         }
 
-        return view('mosques.show')->with('mosque', $mosque);
+        return view('mosque::mosques.show')->with('mosque', $mosque);
     }
 }

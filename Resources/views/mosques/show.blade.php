@@ -10,7 +10,7 @@
         <div class="box box-primary">
             <div class="box-body">
                 <div class="row" style="padding-left: 20px">
-                    @include('mosques.show_fields')
+                    @include('mosque::mosques.show_fields')
                     <a href="{!! route('mosques.index') !!}" class="btn btn-default">
                         @lang('crud.back')
                     </a>
