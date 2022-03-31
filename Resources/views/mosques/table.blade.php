@@ -2,14 +2,14 @@
     <table class="table" id="mosques-table">
         <thead>
             <tr>
-                <th>@lang('models/mosques.fields.name')</th>
-                <th>@lang('models/mosques.fields.image')</th>
-                <th>@lang('models/mosques.fields.description')</th>
-                <th>@lang('models/mosques.fields.address')</th>
-                <th>@lang('models/mosques.fields.website')</th>
-                <th>@lang('models/mosques.fields.prefectures')</th>
-                <th>@lang('models/mosques.fields.city')</th>
-                <th>@lang('models/mosques.fields.country')</th>
+                <th>@lang('mosque::models/mosques.fields.name')</th>
+                <th>@lang('mosque::models/mosques.fields.image')</th>
+                <th>@lang('mosque::models/mosques.fields.description')</th>
+                <th>@lang('mosque::models/mosques.fields.address')</th>
+                <th>@lang('mosque::models/mosques.fields.website')</th>
+                <th>@lang('mosque::models/mosques.fields.prefectures')</th>
+                <th>@lang('mosque::models/mosques.fields.city')</th>
+                <th>@lang('mosque::models/mosques.fields.country')</th>
             </tr>
         </thead>
         <tbody>
@@ -32,3 +32,10 @@
         </tbody>
     </table>
 </div>
+@push('styles')
+<style>
+main.main-content {
+    padding: 20px 50px;
+}
+</style>
+@endpush

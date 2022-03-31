@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1 class="pull-left">
-            @lang('models/mosques.plural')
+            @lang('mosque::models/mosques.plural')
         </h1>
         <!-- <h1 class="pull-right">
            <a class="btn btn-primary pull-right" style="margin-top: -10px;margin-bottom: 5px" href="{!! route('mosques.create') !!}">@lang('crud.add_new')</a>

@@ -3,7 +3,7 @@
 @section('content')
     <section class="content-header">
         <h1>
-            @lang('models/mosques.singular')
+            @lang('mosque::models/mosques.singular')
         </h1>
     </section>
     <div class="content">
