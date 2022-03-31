@@ -58,7 +58,7 @@ class MosqueController extends AppBaseController
 
         $mosque = $this->mosqueRepository->create($input);
 
-        Flash::success(__('messages.saved', ['model' => __('models/mosques.singular')]));
+        Flash::success(__('messages.saved', ['model' => __('mosque::models/mosques.singular')]));
 
         return redirect(route('mosques.index'));
     }
@@ -75,7 +75,7 @@ class MosqueController extends AppBaseController
         $mosque = $this->mosqueRepository->find($id);
 
         if (empty($mosque)) {
-            Flash::error(__('messages.not_found', ['model' => __('models/mosques.singular')]));
+            Flash::error(__('messages.not_found', ['model' => __('mosque::models/mosques.singular')]));
 
             return redirect(route('mosques.index'));
         }

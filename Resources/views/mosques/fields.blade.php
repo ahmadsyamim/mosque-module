@@ -1,48 +1,48 @@
 <!-- Name Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('name', __('mosques.fields.name').':') !!}
+    {!! Form::label('name', __('mosque::models/mosques.fields.name').':') !!}
     {!! Form::text('name', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Image Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('image', __('models/mosques.fields.image').':') !!}
+    {!! Form::label('image', __('mosque::models/mosques.fields.image').':') !!}
     {!! Form::text('image', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Description Field -->
 <div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('description', __('models/mosques.fields.description').':') !!}
+    {!! Form::label('description', __('mosque::models/mosques.fields.description').':') !!}
     {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Address Field -->
 <div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('address', __('models/mosques.fields.address').':') !!}
+    {!! Form::label('address', __('mosque::models/mosques.fields.address').':') !!}
     {!! Form::textarea('address', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Website Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('website', __('models/mosques.fields.website').':') !!}
+    {!! Form::label('website', __('mosque::models/mosques.fields.website').':') !!}
     {!! Form::text('website', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Prefectures Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('prefectures', __('models/mosques.fields.prefectures').':') !!}
+    {!! Form::label('prefectures', __('mosque::models/mosques.fields.prefectures').':') !!}
     {!! Form::text('prefectures', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- City Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('city', __('models/mosques.fields.city').':') !!}
+    {!! Form::label('city', __('mosque::models/mosques.fields.city').':') !!}
     {!! Form::text('city', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Status Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('status', __('models/mosques.fields.status').':') !!}
+    {!! Form::label('status', __('mosque::models/mosques.fields.status').':') !!}
     {!! Form::number('status', null, ['class' => 'form-control']) !!}
 </div>
 
